@@ -1,0 +1,15 @@
+<a
+  href="{% url 'EditBlogView' slugId=blog.slug %}"
+  onclick="return confirm('Are you sure you want to edit this Blog Post with title : {{blog.title}}?');"
+  class="btn btn-primary floatEdit"
+  >Edit Blog</a
+>
+<style>
+  .floatEdit {
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+  }
+</style>

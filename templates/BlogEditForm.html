@@ -1,0 +1,24 @@
+{% load static %}
+{% include 'top.html' %}
+{% include 'logoutPart.html' %}
+{% include 'hiUser.html' %}
+<body>
+    <div class="title text-center">
+        <h1>Edit this Blog-Post</h1>
+        <hr>
+    </div>
+    <div class="text-center">
+        <div class="form">
+            <form action="{% url 'EditBlogView' slugId=blog.slug %}" method="post" autocomplete="off" class="text-center">
+                {% csrf_token %}
+                <textarea name="title" id="title" cols="100" rows="2" class="p-3 ">{{blog.title}}</textarea>
+                <br>
+                <textarea name="body" id="body" cols="100" rows="15" class="p-3 m-1">{{blog.body}}</textarea>
+                <br>
+                <input type="submit" value="Submit" class="btn btn-dark">
+            </form>
+        </div>
+    </div>
+
+</body>
+{% include 'bottom.html' %}

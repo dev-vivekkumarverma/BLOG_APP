@@ -1,0 +1,23 @@
+{% load static %}
+{% include 'top.html' %}
+
+<body>
+    {% include 'hiUser.html' %}
+    <section>
+        <div class="p-5 row text-center items-alignment-center content.justify.center">
+            <div class="col">
+                <h1>{{ message }}</h1>
+            </div>
+        </div>
+        <div class="p-5 row text-center items-alignment-center content.justify.center">
+          <div class="col">
+              <div class="txt-center">
+                  <a href="{% url 'ListBlog' %}" style="color:white;" class="btn btn-primary">See Blogs</a>
+              </div>
+          </div>
+      </div>
+    </section>
+
+</body>
+
+{% include 'bottom.html' %}

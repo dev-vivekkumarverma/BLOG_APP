@@ -1,0 +1,18 @@
+{% load static %}
+{% include 'top.html' %}
+
+<body>
+    <div class="container">
+        <div class="error-message text-center">
+            <h1><span style="color:black;">Error Occurred</span></h1>
+        </div>
+        <hr>
+        <div class="content text-center p-4" style="margin:5rem 0;">
+            <h3>{{ErrorMessage}}</h3>
+            <hr>
+            <h1>{{status}}</h1>
+        </div>
+    </div>
+    
+</body>
+{% include 'bottom.html' %}

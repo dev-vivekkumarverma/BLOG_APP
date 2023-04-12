@@ -1,0 +1,45 @@
+{% include 'top.html' %}
+<body>
+  {% include 'logoutPart.html' %}
+  {% include 'hiUser.html' %}
+  <div class="container">
+    <div class="header text-center">
+      <h1 style="font-weight: bold; font-size: 3rem">Blogs</h1>
+    </div>
+    <div class="list-group">
+      {% for blogPost in blogs %}
+      <a
+        href="{{ blogPost.blogUrl }}"
+        class="list-group-item list-group-item-action m-1 contentList"
+      >
+        <div class="text-end">
+          <b>{{ blogPost.createdOn }}</b>
+        </div>
+        <div class="text-start">
+          <b>{{ blogPost.title | safe }}</b>
+        </div>
+        
+        <hr>
+        {{ blogPost.body | truncatewords:30 | safe}}
+        <div class="text-end">
+          <b>- {{ blogPost.createdBy.username }}</b>
+        </div>
+        
+      
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% include 'createBlogButton.html' %}
+</body>
+
+<style>
+  .contentList {
+    height: 90%;
+    background: rgba(14,22,12,0.5);
+    color:white;
+    margin-top: 5vh;
+    border-radius:0.5rem;
+  }
+</style>
+{% include 'bottom.html' %}

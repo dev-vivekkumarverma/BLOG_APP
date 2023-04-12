@@ -1,0 +1,56 @@
+{% load static %} {% include 'top.html' %}
+<body>
+  <div class="container">
+    <div class="header p-4 text-center">
+      <h1>Sign-Up</h1>
+      <hr />
+    </div>
+    <div class="text-center mt-4">
+      <div class="form text-center">
+        <form
+          action="{% url 'createUser' %}"
+          method="post"
+          autocomplete="off"
+          class="text-center"
+        >
+        {% csrf_token %}
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter your name"
+            style="padding: 0 3rem; margin: 0.25rem 0"
+          />
+          <br />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+            style="padding: 0 3rem; margin: 0.25rem;"
+          />
+          <br />
+          <input
+            type="text"
+            name="password"
+            id="password"
+            placeholder="Enter your password"
+            style="padding: 0 3rem; margin: 0.25rem 0"
+          />
+          <br />
+          <input
+            type="password"
+            name="conformPassword"
+            id="conformPassword"
+            placeholder="Re-type Password"
+            style="padding: 0 3rem; margin: 0.25rem 0"
+          />
+          <br />
+          <input type="submit" value="Submit" style="padding: 0 3rem; margin: 0.25rem;"/>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+{% include 'bottom.html' %}

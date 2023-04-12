@@ -1,0 +1,85 @@
+{% load static %} {% include 'top.html' %}
+<body>
+  <div class="container text-center" style="margin-top: 30vh">
+    <div class="header text-center">
+      <h1>Log-in</h1>
+    </div>
+    <hr />
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-4 col-sm-6 p-1">
+        <div class="row">
+          <form
+            action="{% url 'login' %}"
+            method="post"
+            autocomplete="off"
+            class="text-cente"
+          >
+            {% csrf_token %}
+            <div class="row p-1">
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Enter Username"
+              />
+            </div>
+            <div class="row p-1">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter Password"
+              />
+            </div>
+            <div class="text-center mt-3">
+              <input type="submit" value="submit" style="padding: 0 2rem;" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<style>
+   input {
+     text-align: center;
+     autocomplete: off;
+     font-weight: bold;
+     justify-text: center;
+     border-radius: 1rem;
+     background: #1A0431;
+     color:white;
+     border: 1px blcak solid;
+   }
+   {% comment %} input[type="text"] {
+     -webkit-box-shadow: none;
+     border: 1px transparent solid;
+     background: transparent;
+     color: white;
+   }
+   input[type="password"] {
+     border: 1px transparent solid;
+     background: transparent;
+     color: white;
+   }
+   input[type="submit"] {
+     border: 2px white solid;
+     background: transparent;
+     color: white;
+     padding: 0 10%;
+     autocomplete: "false";
+   }
+  {% endcomment %}
+   {% comment %} input:-webkit-autofill {
+     -webkit-box-shadow: 0 0 0px 1000px white inset;
+   }
+
+   input:-webkit-autofill:focus {
+     -webkit-box-shadow: /*your box-shadow*/ , 0 0 0 50px white inset;
+     -webkit-text-fill-color: #333;
+   }
+
+   -webkit-text-fill-color: #838b95 !important;
+   {% endcomment %}
+</style>
+{% include 'bottom.html' %}

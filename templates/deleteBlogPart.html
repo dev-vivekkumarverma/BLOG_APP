@@ -1,0 +1,15 @@
+<a
+  href="{% url 'DeleteBlog' slugId=blog.slug %}"
+  onclick="return confirm('Are you sure you want to delete this Blog Post with title : {{blog.title}}?');"
+  class="btn btn-danger floatDelete"
+  >Delete Blog</a
+>
+<style>
+  .floatDelete {
+    position: fixed;
+    top: 100px;
+    left: 40px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+  }
+</style>
